@@ -1,16 +1,11 @@
 import LoginBtn from "@/components/btns/LoginBtn";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
-export default async function page() {
+export default async function LoginBtnSever() {
   const supabase = createServerComponentClient({ cookies });
   const {
     data: { session },
   } = await supabase.auth.getSession();
-
-  if (session) {
-    redirect("/");
-  }
-  return <LoginBtn session={session} />;
+  return <LoginBtn session={session}/>;
 }

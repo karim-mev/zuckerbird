@@ -22,8 +22,8 @@ export default function LoginBtn({session}: {session: Session | null}) {
   }
 
   return session ? (
-    <button onClick={handleLogout}>Logout</button>
+    <button className="text-xs text-gray-400" onClick={handleLogout}>Logout</button>
   ) : (
-    <button onClick={handleLogin}>Login</button>
+    <button className="text-xs text-gray-400" onClick={handleLogin}>Login</button>
   );
 }

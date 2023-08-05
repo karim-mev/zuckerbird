@@ -25,16 +25,17 @@ export default function XeetingForm({
     } catch (error) {
       console.log(error);
     }
-    // router.refresh()
   }
+  
   return (
-    <div>
+    <div className="w-full">
       <form onSubmit={addXeet}>
         <input
           type="text"
-          placeholder="xeet"
+          placeholder="What is happening?"
           value={title}
           onChange={handleChange}
+          className="bg-inherit w-full outline-none text-2xl font-bold leading-loose focus:outline-0"
         />
       </form>
     </div>
